@@ -116,7 +116,7 @@ export const ClientLifecycle = () => {
       <CardContent>
         <div className="flex flex-col space-y-10">
           {/* Journey Phases - Made more visual with curved path and arrows */}
-          <div className="relative py-16">
+          <div className="relative py-24">
             {/* Path line with a slight curve */}
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#4B4C6A] via-[#7B2280] to-[#E40276] -translate-y-1/2 rounded-full" 
                 style={{ 
@@ -138,7 +138,7 @@ export const ClientLifecycle = () => {
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center ${getStatusColor(phase.status)} ${getStatusTextColor(phase.status)} shadow-lg`}>
                     <phase.icon className="h-7 w-7" />
                   </div>
-                  <div className="absolute -bottom-12 transform translate-y-full mt-2 text-center w-24">
+                  <div className="absolute -bottom-14 transform translate-y-full mt-2 text-center w-28 mx-auto">
                     <p className="font-medium">{phase.name}</p>
                     <p className="text-xs text-gray-500">{phase.description}</p>
                   </div>
@@ -147,8 +147,8 @@ export const ClientLifecycle = () => {
             </div>
           </div>
           
-          {/* Intervention Points - Styled with gradients and icons */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-24">
+          {/* Intervention Points - Styled with gradients and icons - Increased top margin */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-40">
             {interventionPoints.map((point) => (
               <Card key={point.id} className="bg-gradient-to-r from-[#7B2280]/10 to-[#E40276]/10 border-[#7B2280]/30 overflow-hidden">
                 <CardContent className="p-4 text-center relative">
