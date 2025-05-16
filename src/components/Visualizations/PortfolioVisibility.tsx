@@ -133,7 +133,7 @@ export const PortfolioVisibility = () => {
           <div className="mt-8 p-4 bg-[#F5F5F5] rounded-lg border border-[#4B4C6A]/20 w-full">
             <h3 className="font-medium mb-2 text-[#7B2280]">Visibility Gap Analysis Summary</h3>
             <ul className="space-y-2 text-sm">
-              <li><span className="font-medium">High Visibility Services (>75% awareness):</span> Traditional CX Management services including Back-office Processing, Integrated Sales, and Multilingual Services</li>
+              <li><span className="font-medium">High Visibility Services (&gt;75% awareness):</span> Traditional CX Management services including Back-office Processing, Integrated Sales, and Multilingual Services</li>
               <li><span className="font-medium">Medium Visibility Services (40-75% awareness):</span> Digital CX and AI solutions including Real-time Speech Understanding and StoryfAI</li>
               <li><span className="font-medium">Low-Medium Visibility Services (25-40% awareness):</span> Consulting, Analytics and Technology offerings</li>
               <li><span className="font-medium">Low Visibility Services (&lt;25% awareness):</span> Specialized Services including Claims Management, Healthcare Support, and Visa Services</li>
@@ -150,4 +150,3 @@ export const PortfolioVisibility = () => {
     </Card>
   );
 };
-
