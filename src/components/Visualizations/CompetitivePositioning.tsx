@@ -12,19 +12,19 @@ interface CompetitorPosition {
 }
 
 const digitalCxCompetitors: CompetitorPosition[] = [
-  { name: "TelePerformance", x: 25, y: 75, size: 20, color: "#F44336", isTeleperf: true },
-  { name: "Concentrix", x: 75, y: 75, size: 15, color: "#2196F3", isTeleperf: false },
-  { name: "Sitel", x: 25, y: 25, size: 15, color: "#4CAF50", isTeleperf: false },
-  { name: "Tech Boutiques", x: 75, y: 80, size: 10, color: "#9C27B0", isTeleperf: false },
-  { name: "Regional Players", x: 20, y: 20, size: 10, color: "#FFC107", isTeleperf: false },
+  { name: "TelePerformance", x: 25, y: 25, size: 20, color: "#E40276", isTeleperf: true },
+  { name: "Concentrix", x: 75, y: 25, size: 15, color: "#4B4C6A", isTeleperf: false },
+  { name: "Sitel", x: 25, y: 75, size: 15, color: "#7B2280", isTeleperf: false },
+  { name: "Tech Boutiques", x: 75, y: 25, size: 10, color: "#4B4C6A", isTeleperf: false },
+  { name: "Regional Players", x: 20, y: 75, size: 10, color: "#7B2280", isTeleperf: false },
 ];
 
 const consultingCompetitors: CompetitorPosition[] = [
-  { name: "TelePerformance", x: 25, y: 25, size: 20, color: "#F44336", isTeleperf: true },
-  { name: "Concentrix", x: 75, y: 25, size: 15, color: "#2196F3", isTeleperf: false },
-  { name: "Accenture", x: 25, y: 75, size: 15, color: "#FF9800", isTeleperf: false },
-  { name: "Consulting Firms", x: 75, y: 75, size: 15, color: "#9C27B0", isTeleperf: false },
-  { name: "Vertical Specialists", x: 80, y: 30, size: 10, color: "#009688", isTeleperf: false },
+  { name: "TelePerformance", x: 25, y: 75, size: 20, color: "#E40276", isTeleperf: true },
+  { name: "Concentrix", x: 75, y: 75, size: 15, color: "#4B4C6A", isTeleperf: false },
+  { name: "Accenture", x: 25, y: 25, size: 15, color: "#7B2280", isTeleperf: false },
+  { name: "Consulting Firms", x: 75, y: 25, size: 15, color: "#4B4C6A", isTeleperf: false },
+  { name: "Vertical Specialists", x: 80, y: 70, size: 10, color: "#7B2280", isTeleperf: false },
 ];
 
 const PositioningMap = ({ 
@@ -58,7 +58,7 @@ const PositioningMap = ({
         
         {/* Quadrant lines */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="absolute inset-0 border-gray-200" style={{ borderRightWidth: 1, borderTopWidth: 1 }}></div>
+          <div className="absolute inset-0" style={{ borderRightWidth: 1, borderBottomWidth: 1, borderColor: "#E0E0E0" }}></div>
         </div>
         
         {/* Competitors */}
@@ -80,7 +80,7 @@ const PositioningMap = ({
           </div>
         ))}
         
-        {/* Competitor labels */}
+        {/* Competitor labels - positioned better to avoid overlapping */}
         {competitors.map((comp, idx) => (
           <div 
             key={`label-${idx}`} 
@@ -88,16 +88,18 @@ const PositioningMap = ({
             style={{
               left: `${comp.x}%`,
               top: `${comp.y + (comp.size / 2) + 5}%`,
-              transform: "translateX(-50%)"
+              transform: "translateX(-50%)",
+              maxWidth: "80px",
+              textAlign: "center"
             }}
           >
             {comp.name}
           </div>
         ))}
         
-        {/* Opportunity Zone */}
+        {/* Opportunity Zone - better positioned */}
         <div 
-          className="absolute border border-dashed border-tp-red rounded-lg flex items-center justify-center p-1"
+          className="absolute border border-dashed border-[#E40276] rounded-lg flex items-center justify-center p-1"
           style={{
             left: `${opportunityZone.x - 15}%`,
             top: `${opportunityZone.y - 15}%`,
@@ -105,8 +107,14 @@ const PositioningMap = ({
             height: "30%"
           }}
         >
-          <span className="text-xs text-tp-red text-center">Opportunity Zone</span>
+          <span className="text-xs text-[#E40276] text-center">{opportunityZone.label}</span>
         </div>
+
+        {/* Quadrant labels - added for clarity */}
+        <div className="absolute top-[20%] left-[20%] text-xs text-gray-500">Quadrant 1</div>
+        <div className="absolute top-[20%] left-[80%] text-xs text-gray-500">Quadrant 2</div>
+        <div className="absolute top-[80%] left-[20%] text-xs text-gray-500">Quadrant 3</div>
+        <div className="absolute top-[80%] left-[80%] text-xs text-gray-500">Quadrant 4</div>
       </div>
     </div>
   );
@@ -116,7 +124,7 @@ export const CompetitivePositioning = () => {
   return (
     <Card className="w-full animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-center text-2xl">TelePerformance EMEA Competitive Positioning Analysis</CardTitle>
+        <CardTitle className="text-center text-2xl bg-gradient-to-r from-[#7B2280] to-[#E40276] bg-clip-text text-transparent">TelePerformance EMEA Competitive Positioning Analysis</CardTitle>
         <CardDescription className="text-center">
           Based on Gartner CX Service Provider Quadrant 2024 & IDC Market Analysis
         </CardDescription>
@@ -128,7 +136,7 @@ export const CompetitivePositioning = () => {
             xLabel={["Scale", "Specialized"]}
             yLabel={["Technological Innovation", "Traditional Delivery"]}
             competitors={digitalCxCompetitors}
-            opportunityZone={{x: 25, y: 75, label: "Scale + Innovation Leadership"}}
+            opportunityZone={{x: 25, y: 25, label: "Scale + Innovation Leadership"}}
           />
           
           <PositioningMap 
@@ -140,8 +148,8 @@ export const CompetitivePositioning = () => {
           />
         </div>
         
-        <div className="mt-8 bg-gray-50 p-4 rounded-lg">
-          <h3 className="font-medium mb-2">Research-Based Insights</h3>
+        <div className="mt-8 bg-[#F5F5F5] p-4 rounded-lg border border-[#4B4C6A]/20">
+          <h3 className="font-medium mb-2 text-[#7B2280]">Research-Based Insights</h3>
           <ul className="space-y-2">
             <li className="text-sm">
               <span className="font-medium">Digital CX & AI:</span> TelePerformance has established a leadership position in scale while advancing technological capabilities, according to Gartner's "CX Technology Provider Evaluation" (2023).

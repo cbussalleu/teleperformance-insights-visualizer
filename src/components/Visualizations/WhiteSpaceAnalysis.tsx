@@ -80,9 +80,9 @@ const whiteSpaceData: WhiteSpaceData[] = [
 ];
 
 const getSaturationColor = (level: number) => {
-  if (level < 30) return "bg-green-100 text-green-800";
-  if (level < 50) return "bg-yellow-100 text-yellow-800";
-  return "bg-red-100 text-red-800";
+  if (level < 30) return "bg-[#7B2280]/20 text-[#7B2280]";
+  if (level < 50) return "bg-[#7B2280]/40 text-[#7B2280]";
+  return "bg-[#E40276]/30 text-[#E40276]";
 };
 
 const PriorityStars = ({ count }: { count: number }) => {
@@ -95,9 +95,9 @@ const PriorityStars = ({ count }: { count: number }) => {
           width="16"
           height="16"
           viewBox="0 0 24 24"
-          fill={idx < count ? "#FFC107" : "#E0E0E0"}
+          fill={idx < count ? "#E40276" : "#E0E0E0"}
           strokeWidth="2"
-          stroke={idx < count ? "#FFC107" : "#E0E0E0"}
+          stroke={idx < count ? "#E40276" : "#E0E0E0"}
           className="mr-0.5"
         >
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -111,7 +111,7 @@ export const WhiteSpaceAnalysis = () => {
   return (
     <Card className="w-full animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-center text-2xl">TelePerformance EMEA White Space and Differentiation Opportunity Analysis</CardTitle>
+        <CardTitle className="text-center text-2xl bg-gradient-to-r from-[#7B2280] to-[#E40276] bg-clip-text text-transparent">TelePerformance EMEA White Space and Differentiation Opportunity Analysis</CardTitle>
         <CardDescription className="text-center">
           Strategic market white spaces aligned with portfolio capabilities
         </CardDescription>
@@ -120,18 +120,18 @@ export const WhiteSpaceAnalysis = () => {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gray-50">
-                <TableHead className="font-medium">Market White Space</TableHead>
-                <TableHead className="font-medium">TP Portfolio Alignment</TableHead>
-                <TableHead className="font-medium">Market Saturation Level</TableHead>
-                <TableHead className="font-medium">Competitive Differentiation Potential</TableHead>
-                <TableHead className="font-medium">Strategic Priority</TableHead>
-                <TableHead className="font-medium">Market Size 2026 (EMEA)</TableHead>
+              <TableRow className="bg-gradient-to-r from-[#7B2280]/5 to-[#E40276]/5">
+                <TableHead className="font-medium text-[#7B2280]">Market White Space</TableHead>
+                <TableHead className="font-medium text-[#7B2280]">TP Portfolio Alignment</TableHead>
+                <TableHead className="font-medium text-[#7B2280]">Market Saturation Level</TableHead>
+                <TableHead className="font-medium text-[#7B2280]">Competitive Differentiation Potential</TableHead>
+                <TableHead className="font-medium text-[#7B2280]">Strategic Priority</TableHead>
+                <TableHead className="font-medium text-[#7B2280]">Market Size 2026 (EMEA)</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {whiteSpaceData.map((data, idx) => (
-                <TableRow key={idx} className={idx % 2 === 0 ? "bg-gray-50/50" : ""}>
+                <TableRow key={idx} className={idx % 2 === 0 ? "bg-gradient-to-r from-[#7B2280]/5 to-[#E40276]/5" : ""}>
                   <TableCell className="font-medium">{data.whiteSpace}</TableCell>
                   <TableCell className="text-sm">{data.portfolioAlignment}</TableCell>
                   <TableCell>
@@ -150,8 +150,8 @@ export const WhiteSpaceAnalysis = () => {
           </Table>
         </div>
         
-        <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-          <h3 className="font-medium mb-3">Research-Based Strategic Assessment</h3>
+        <div className="mt-8 p-4 bg-gradient-to-r from-[#7B2280]/5 to-[#E40276]/5 rounded-lg border border-[#7B2280]/20">
+          <h3 className="font-medium mb-3 text-[#7B2280]">Research-Based Strategic Assessment</h3>
           <ol className="space-y-3 list-decimal pl-5">
             <li className="text-sm">
               According to McKinsey's "Market Space Opportunity Analysis" (2024), the most valuable market positions combine three factors: low current market saturation, strong existing capabilities, and substantial projected market growth.

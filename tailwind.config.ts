@@ -63,6 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// Teleperformance brand colors
+				teleperformance: {
+					purple: '#7B2280',
+					magenta: '#E40276',
+					darkgray: '#4B4C6A',
+				},
 				// Custom colors for Teleperformance visualization
 				tp: {
 					blue: '#1565C0',
@@ -74,11 +80,11 @@ export default {
 					lightgray: '#ECEFF1'
 				},
 				visibility: {
-					high: '#4CAF50',
-					mediumHigh: '#8BC34A',
-					medium: '#FFC107',
-					lowMedium: '#FF9800', 
-					low: '#F44336'
+					high: '#7B2280',
+					mediumHigh: '#9B4C93',
+					medium: '#BB6FA5',
+					lowMedium: '#D595BD', 
+					low: '#E40276'
 				}
 			},
 			borderRadius: {
