@@ -12,7 +12,7 @@ interface CompetitorPosition {
 }
 
 const digitalCxCompetitors: CompetitorPosition[] = [
-  { name: "TelePerformance", x: 25, y: 25, size: 20, color: "#E40276", isTeleperf: true },
+  { name: "Teleperformance", x: 25, y: 25, size: 20, color: "#E40276", isTeleperf: true },
   { name: "Concentrix", x: 75, y: 25, size: 15, color: "#4B4C6A", isTeleperf: false },
   { name: "Sitel", x: 25, y: 75, size: 15, color: "#7B2280", isTeleperf: false },
   { name: "Tech Boutiques", x: 75, y: 25, size: 10, color: "#4B4C6A", isTeleperf: false },
@@ -20,7 +20,7 @@ const digitalCxCompetitors: CompetitorPosition[] = [
 ];
 
 const consultingCompetitors: CompetitorPosition[] = [
-  { name: "TelePerformance", x: 25, y: 75, size: 20, color: "#E40276", isTeleperf: true },
+  { name: "Teleperformance", x: 25, y: 75, size: 20, color: "#E40276", isTeleperf: true },
   { name: "Concentrix", x: 75, y: 75, size: 15, color: "#4B4C6A", isTeleperf: false },
   { name: "Accenture", x: 25, y: 25, size: 15, color: "#7B2280", isTeleperf: false },
   { name: "Consulting Firms", x: 75, y: 25, size: 15, color: "#4B4C6A", isTeleperf: false },
@@ -45,20 +45,21 @@ const PositioningMap = ({
       <h3 className="text-lg font-medium mb-2">{title}</h3>
       <div className="relative h-80 border border-gray-200 bg-white">
         {/* X-axis labels */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between px-4">
-          <span className="text-xs">{xLabel[0]}</span>
-          <span className="text-xs">{xLabel[1]}</span>
+        <div className="absolute w-full bottom-0 flex justify-between px-4">
+          <span className="text-xs -translate-y-8">{xLabel[0]}</span>
+          <span className="text-xs -translate-y-8">{xLabel[1]}</span>
         </div>
         
         {/* Y-axis labels */}
-        <div className="absolute top-0 bottom-0 left-0 flex flex-col justify-between py-4">
-          <span className="text-xs transform -rotate-90">{yLabel[0]}</span>
-          <span className="text-xs transform -rotate-90">{yLabel[1]}</span>
+        <div className="absolute h-full left-0 flex flex-col justify-between py-4">
+          <span className="text-xs -translate-x-2 -rotate-90 absolute top-4 -left-8">{yLabel[0]}</span>
+          <span className="text-xs -translate-x-2 -rotate-90 absolute bottom-4 -left-8">{yLabel[1]}</span>
         </div>
         
         {/* Quadrant lines */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="absolute inset-0" style={{ borderRightWidth: 1, borderBottomWidth: 1, borderColor: "#E0E0E0" }}></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-300"></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300"></div>
         </div>
         
         {/* Competitors */}
@@ -124,7 +125,7 @@ export const CompetitivePositioning = () => {
   return (
     <Card className="w-full animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-center text-2xl bg-gradient-to-r from-[#7B2280] to-[#E40276] bg-clip-text text-transparent">TelePerformance EMEA Competitive Positioning Analysis</CardTitle>
+        <CardTitle className="text-center text-2xl text-black">Teleperformance EMEA Competitive Positioning Analysis</CardTitle>
         <CardDescription className="text-center">
           Based on Gartner CX Service Provider Quadrant 2024 & IDC Market Analysis
         </CardDescription>
@@ -152,7 +153,7 @@ export const CompetitivePositioning = () => {
           <h3 className="font-medium mb-2 text-[#7B2280]">Research-Based Insights</h3>
           <ul className="space-y-2">
             <li className="text-sm">
-              <span className="font-medium">Digital CX & AI:</span> TelePerformance has established a leadership position in scale while advancing technological capabilities, according to Gartner's "CX Technology Provider Evaluation" (2023).
+              <span className="font-medium">Digital CX & AI:</span> Teleperformance has established a leadership position in scale while advancing technological capabilities, according to Gartner's "CX Technology Provider Evaluation" (2023).
             </li>
             <li className="text-sm">
               <span className="font-medium">Consulting Services:</span> Primary gap exists in strategic value perception, with HBR's "Consulting Services Evolution" study showing that CX providers are typically undervalued for business consulting despite operational expertise.
@@ -161,7 +162,7 @@ export const CompetitivePositioning = () => {
               <span className="font-medium">Market Opportunity:</span> IDC's "Service Provider Future" report identifies the convergence of technological scale and strategic consulting as the highest-value positioning territory by 2026.
             </li>
             <li className="text-sm">
-              <span className="font-medium">Competitive Advantage:</span> TelePerformance's diverse portfolio offers unique opportunity to bridge operational excellence with strategic transformation, according to Forrester's "CX to Business Value" analysis.
+              <span className="font-medium">Competitive Advantage:</span> Teleperformance's diverse portfolio offers unique opportunity to bridge operational excellence with strategic transformation, according to Forrester's "CX to Business Value" analysis.
             </li>
           </ul>
         </div>

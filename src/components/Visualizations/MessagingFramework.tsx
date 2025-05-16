@@ -1,10 +1,11 @@
 
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { User, Computer, FileText, Info, ArrowRightCircle, Award, AreaChart, Briefcase } from "lucide-react";
 
-const CRoleCard = ({ role, color, priorities, narrative, portfolioFocus, proofPoints, engagementStrategy }: {
+const CRoleCard = ({ role, icon, priorities, narrative, portfolioFocus, proofPoints, engagementStrategy }: {
   role: string;
-  color: string;
+  icon: React.ReactNode;
   priorities: string[];
   narrative: string;
   portfolioFocus: string[];
@@ -13,12 +14,16 @@ const CRoleCard = ({ role, color, priorities, narrative, portfolioFocus, proofPo
 }) => {
   return (
     <div className="flex flex-col h-full">
-      <div className={`p-3 rounded-t-lg ${color} text-white font-medium text-center`}>
+      <div className="p-3 rounded-t-lg bg-gradient-to-r from-[#7B2280] to-[#E40276] text-white font-medium text-center flex items-center justify-center gap-2">
+        {icon}
         {role}
       </div>
       <div className="flex-1 border border-t-0 rounded-b-lg p-4 bg-white">
         <div className="mb-4">
-          <h4 className="font-medium mb-2 text-sm">Strategic Priorities</h4>
+          <h4 className="font-medium mb-2 text-sm flex items-center gap-1">
+            <Award className="h-4 w-4 text-[#7B2280]" />
+            Strategic Priorities
+          </h4>
           <ul className="list-disc pl-5 text-sm space-y-1">
             {priorities.map((priority, idx) => (
               <li key={idx}>{priority}</li>
@@ -27,12 +32,18 @@ const CRoleCard = ({ role, color, priorities, narrative, portfolioFocus, proofPo
         </div>
         
         <div className="mb-4">
-          <h4 className="font-medium mb-2 text-sm">Compelling Narrative</h4>
+          <h4 className="font-medium mb-2 text-sm flex items-center gap-1">
+            <Info className="h-4 w-4 text-[#7B2280]" />
+            Compelling Narrative
+          </h4>
           <p className="text-sm italic">{narrative}</p>
         </div>
         
         <div className="mb-4">
-          <h4 className="font-medium mb-2 text-sm">Portfolio Focus</h4>
+          <h4 className="font-medium mb-2 text-sm flex items-center gap-1">
+            <Briefcase className="h-4 w-4 text-[#7B2280]" />
+            Portfolio Focus
+          </h4>
           <ul className="list-disc pl-5 text-sm space-y-1">
             {portfolioFocus.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -41,7 +52,10 @@ const CRoleCard = ({ role, color, priorities, narrative, portfolioFocus, proofPo
         </div>
         
         <div className="mb-4">
-          <h4 className="font-medium mb-2 text-sm">Proof Points</h4>
+          <h4 className="font-medium mb-2 text-sm flex items-center gap-1">
+            <FileText className="h-4 w-4 text-[#7B2280]" />
+            Proof Points
+          </h4>
           <ul className="list-disc pl-5 text-sm space-y-1">
             {proofPoints.map((point, idx) => (
               <li key={idx}>{point}</li>
@@ -50,7 +64,10 @@ const CRoleCard = ({ role, color, priorities, narrative, portfolioFocus, proofPo
         </div>
         
         <div>
-          <h4 className="font-medium mb-2 text-sm">Engagement Strategy</h4>
+          <h4 className="font-medium mb-2 text-sm flex items-center gap-1">
+            <ArrowRightCircle className="h-4 w-4 text-[#7B2280]" />
+            Engagement Strategy
+          </h4>
           <p className="text-sm">{engagementStrategy}</p>
         </div>
       </div>
@@ -62,7 +79,7 @@ export const MessagingFramework = () => {
   return (
     <Card className="w-full animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-center text-2xl">TelePerformance C-Suite Segmented Messaging Framework</CardTitle>
+        <CardTitle className="text-center text-2xl text-black">Teleperformance C-Suite Segmented Messaging Framework</CardTitle>
         <CardDescription className="text-center">
           Based on Harvard Business Review B2B Decision-Maker Research & Forrester Buying Cycle Analysis
         </CardDescription>
@@ -71,14 +88,14 @@ export const MessagingFramework = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <CRoleCard 
             role="CEO"
-            color="bg-tp-blue"
+            icon={<User className="h-5 w-5" />}
             priorities={[
               "Business model innovation",
               "Digital transformation acceleration",
               "Shareholder value creation",
               "Cost structure optimization"
             ]}
-            narrative="Beyond operational excellence: TelePerformance delivers enterprise-wide transformation that connects customer experience to strategic business outcomes."
+            narrative="Beyond operational excellence: Teleperformance delivers enterprise-wide transformation that connects customer experience to strategic business outcomes."
             portfolioFocus={[
               "Business Transformation Consulting",
               "Advanced Analytics",
@@ -94,7 +111,7 @@ export const MessagingFramework = () => {
           
           <CRoleCard 
             role="CIO/CTO"
-            color="bg-teal-600"
+            icon={<Computer className="h-5 w-5" />}
             priorities={[
               "Technology integration & ROI",
               "Digital transformation execution",
@@ -118,7 +135,7 @@ export const MessagingFramework = () => {
           
           <CRoleCard 
             role="CFO"
-            color="bg-tp-green"
+            icon={<AreaChart className="h-5 w-5" />}
             priorities={[
               "Cost structure optimization",
               "Working capital efficiency",
@@ -141,8 +158,8 @@ export const MessagingFramework = () => {
           />
         </div>
         
-        <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-          <h3 className="font-medium mb-3">Research-Based Messaging Framework</h3>
+        <div className="mt-8 p-4 bg-gradient-to-r from-[#7B2280]/5 to-[#E40276]/5 rounded-lg border border-[#7B2280]/20">
+          <h3 className="font-medium mb-3 text-[#7B2280]">Research-Based Messaging Framework</h3>
           <ul className="space-y-2">
             <li className="text-sm">
               <span className="font-medium">Harvard Business Review "C-Suite Decision-Making Study" (2023):</span> Executives make purchasing decisions based on how solutions address their strategic priorities rather than solution features.
@@ -159,8 +176,8 @@ export const MessagingFramework = () => {
           </ul>
         </div>
         
-        <div className="mt-6 p-4 bg-white rounded-lg border">
-          <h3 className="font-medium mb-3">Implementation Strategy</h3>
+        <div className="mt-6 p-4 bg-white rounded-lg border border-[#7B2280]/20">
+          <h3 className="font-medium mb-3 text-[#7B2280]">Implementation Strategy</h3>
           <ol className="space-y-2 list-decimal pl-5">
             <li className="text-sm">Develop expanded messaging frameworks for all key C-suite roles (CHRO, CMO, COO)</li>
             <li className="text-sm">Create role-specific sales enablement tools aligned with each messaging framework</li>

@@ -94,7 +94,7 @@ export const PortfolioVisibility = () => {
   return (
     <Card className="w-full animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-center text-2xl bg-gradient-to-r from-[#7B2280] to-[#E40276] bg-clip-text text-transparent">TelePerformance EMEA Portfolio Visibility Analysis</CardTitle>
+        <CardTitle className="text-center text-2xl text-black">Teleperformance EMEA Portfolio Visibility Analysis</CardTitle>
         <CardDescription className="text-center">
           Hierarchical analysis of service portfolio by market visibility
         </CardDescription>
@@ -104,7 +104,7 @@ export const PortfolioVisibility = () => {
           {/* Root node */}
           <div className="flex flex-col items-center mb-8">
             <div className="w-56 py-3 border border-[#7B2280] rounded-lg bg-gradient-to-r from-[#7B2280]/10 to-[#E40276]/10 text-center font-medium">
-              TelePerformance Service Portfolio
+              Teleperformance Service Portfolio
             </div>
             <div className="h-8 w-px bg-gray-300"></div>
           </div>

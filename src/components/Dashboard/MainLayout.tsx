@@ -19,7 +19,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         )}
       >
         <div className="flex h-16 items-center border-b px-6">
-          <h1 className="text-xl font-bold text-tp-blue">Teleperformance EMEA</h1>
+          <img src="/lovable-uploads/b5c5b6c8-1ad3-4853-99d2-b13289bef78f.png" alt="Teleperformance Logo" className="h-8" />
         </div>
         <div className="flex-1 overflow-auto py-2">
           <SidebarNav />
